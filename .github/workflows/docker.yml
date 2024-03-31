@@ -31,6 +31,8 @@ jobs:
           context: "{{defaultContext}}"
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: "ghcr.io/schaka/red-oxide-docker:${{ github.sha }}"
+          tags: |
+            ghcr.io/schaka/red-oxide-docker:${{ github.sha }}
+            ghcr.io/schaka/red-oxide-docker:latest
           secrets: |
             "github_token=${{ secrets.GITHUB_TOKEN }}"
